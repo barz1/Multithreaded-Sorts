@@ -22,8 +22,7 @@ int test_sort(TYPE *, int);
 
 
 int main(int argc, char **argv) {
-  //Check for proper number of arguments, argument 1 corresponds to array size,
-  //argument 2 corresponds to type of array (ordered, reverse ordered random)
+  //Check for proper number of arguments, argument 1 corresponds to array size
   if (argc != 2) {
       printf("Usage: %s [problem size]\n", argv[0]);
       return 1;
