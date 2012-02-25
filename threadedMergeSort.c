@@ -27,9 +27,9 @@ int main(int argc, char **argv) {
       printf("Usage: %s [problem size]\n", argv[0]);
       return 1;
   }
-  clock_t t1, t0;
-  char *sort = (char *)malloc(sizeof(char)*7);
-  double elapsed = 0.0;
+  //clock_t t1, t0;
+  char *sort = "NMGSRT";
+  //double elapsed = 0.0;
   int i, N = atoi(argv[1]);
   TYPE *lst = malloc(sizeof(TYPE)*N);
 
@@ -43,11 +43,10 @@ int main(int argc, char **argv) {
   printf("\n\n");
   #endif
 
-  t0 = clock();
+  //t0 = clock();
   nrmgsrt((TYPE *)lst, N, sizeof(TYPE), compare);
-  sort = "NMGSRT";
-  t1 = clock();
-  elapsed = (t1-t0)/((double)CLOCKS_PER_SEC);
+  //t1 = clock();
+  //elapsed = (t1-t0)/((double)CLOCKS_PER_SEC);
 
   //Print sorted array if compiled with -DPRNT
   #ifdef PRNT
@@ -58,7 +57,7 @@ int main(int argc, char **argv) {
 
   //Test if array is sorted
   if (test_sort(lst, N)) 
-      printf("%s Passed, Elapsed Time: %10.8f\n", sort, elapsed);
+      printf("%s Passed\n", sort);
   else
       printf("%s Failed\n", sort);
 
